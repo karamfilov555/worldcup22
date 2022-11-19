@@ -35,17 +35,17 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
                 vr.Errors.Add("Excel prediction filed cannot be empty.");
             }
 
-            if (!Regex.IsMatch(predictionViewModel.Name, @"^[a-zA-Z0-9]+$"))
+            if (!Regex.IsMatch(predictionViewModel.Name, @"^[0-9a-zA-Z\s]+$"))
             {
                 vr.Succeeded = false;
                 vr.Errors.Add("Please use only latin latter and numbers.");
             }
-            if (!Regex.IsMatch(predictionViewModel.Champion, @"^[a-zA-Z0-9]+$"))
+            if (!Regex.IsMatch(predictionViewModel.Champion, @"^[0-9a-zA-Z\s]+$"))
             {
                 vr.Succeeded = false;
                 vr.Errors.Add("Please use only latin latter and numbers.");
             }
-            if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[a-zA-Z0-9]+$"))
+            if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[0-9a-zA-Z\s]+$"))
             {
                 vr.Succeeded = false;
                 vr.Errors.Add("Please use only latin latter and numbers.");
