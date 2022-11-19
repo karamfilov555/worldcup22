@@ -44,12 +44,12 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Controllers
                 toast.AddErrorToastMessage("Please fill all required fields!");
                 return View("Index");
             }
-            if (!loginViewModel.Username.Equals("dr.adm1n"))
+            if (!loginViewModel.Username.Equals("nargile"))
             {
                 toast.AddErrorToastMessage("Invalid credentials!");
                 return View("Index");
             }
-            if (!loginViewModel.Password.Equals("p4$$word"))
+            if (!loginViewModel.Password.Equals("PakZagubih20Leva"))
             {
                 toast.AddErrorToastMessage("Invalid credentials!");
                 return View("Index");
