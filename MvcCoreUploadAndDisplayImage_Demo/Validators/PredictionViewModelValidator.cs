@@ -21,7 +21,12 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
             }
             else
             {
-                if (!Regex.IsMatch(predictionViewModel.Name, @"^[0-9a-zA-Z\s]+$"))
+                if (predictionViewModel.Name.Length > 49)
+                {
+                    vr.Succeeded = false;
+                    vr.Errors.Add("Name max lenght 50 symbols");
+                }
+                else if(!Regex.IsMatch(predictionViewModel.Name, @"^[0-9a-zA-Z\s]+$"))
                 {
                     vr.Succeeded = false;
                     vr.Errors.Add("Please use only latin latter and numbers.");
@@ -34,7 +39,12 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
             }
             else
             {
-                if (!Regex.IsMatch(predictionViewModel.Champion, @"^[0-9a-zA-Z\s]+$"))
+                if (predictionViewModel.Champion.Length > 49)
+                {
+                    vr.Succeeded = false;
+                    vr.Errors.Add("Champion's name max lenght 50 symbols");
+                }
+                else if (!Regex.IsMatch(predictionViewModel.Champion, @"^[0-9a-zA-Z\s]+$"))
                 {
                     vr.Succeeded = false;
                     vr.Errors.Add("Please use only latin latter and numbers.");
@@ -47,7 +57,12 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
             }
             else
             {
-                if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[0-9a-zA-Z\s]+$"))
+                if (predictionViewModel.TopGoalScorer.Length > 49)
+                {
+                    vr.Succeeded = false;
+                    vr.Errors.Add("TopGoalScorer's name max lenght 50 symbols");
+                }
+                else if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[0-9a-zA-Z\s]+$"))
                 {
                     vr.Succeeded = false;
                     vr.Errors.Add("Please use only latin latter and numbers.");
