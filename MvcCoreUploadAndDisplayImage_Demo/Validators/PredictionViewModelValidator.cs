@@ -19,15 +19,39 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
                 vr.Succeeded = false;
                 vr.Errors.Add("Name cannot be empty.");
             }
+            else
+            {
+                if (!Regex.IsMatch(predictionViewModel.Name, @"^[0-9a-zA-Z\s]+$"))
+                {
+                    vr.Succeeded = false;
+                    vr.Errors.Add("Please use only latin latter and numbers.");
+                }
+            }
             if (string.IsNullOrWhiteSpace(predictionViewModel.Champion))
             {
                 vr.Succeeded = false;
                 vr.Errors.Add("Champion cannot be empty.");
             }
+            else
+            {
+                if (!Regex.IsMatch(predictionViewModel.Champion, @"^[0-9a-zA-Z\s]+$"))
+                {
+                    vr.Succeeded = false;
+                    vr.Errors.Add("Please use only latin latter and numbers.");
+                }
+            }
             if (string.IsNullOrWhiteSpace(predictionViewModel.TopGoalScorer))
             {
                 vr.Succeeded = false;
                 vr.Errors.Add("Top goal scorer cannot be empty.");
+            }
+            else
+            {
+                if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[0-9a-zA-Z\s]+$"))
+                {
+                    vr.Succeeded = false;
+                    vr.Errors.Add("Please use only latin latter and numbers.");
+                }
             }
             if (predictionViewModel.ExcelPrediction is null)
             {
@@ -35,21 +59,6 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
                 vr.Errors.Add("Excel prediction filed cannot be empty.");
             }
 
-            if (!Regex.IsMatch(predictionViewModel.Name, @"^[0-9a-zA-Z\s]+$"))
-            {
-                vr.Succeeded = false;
-                vr.Errors.Add("Please use only latin latter and numbers.");
-            }
-            if (!Regex.IsMatch(predictionViewModel.Champion, @"^[0-9a-zA-Z\s]+$"))
-            {
-                vr.Succeeded = false;
-                vr.Errors.Add("Please use only latin latter and numbers.");
-            }
-            if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[0-9a-zA-Z\s]+$"))
-            {
-                vr.Succeeded = false;
-                vr.Errors.Add("Please use only latin latter and numbers.");
-            }
             return vr;
         }
     }
