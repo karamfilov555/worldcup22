@@ -30,12 +30,15 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Helpers
         public static async Task<bool> UploadFileToStorage(Stream fileStream, PredictionViewModel predictionViewModel,
                                                             AzureStorageConfig _storageConfig)
         {
+            var name = $"{predictionViewModel.Name}_{predictionViewModel.Champion}_{predictionViewModel.TopGoalScorer}_{DateTime.UtcNow}.xlsx".Replace("/", "-");
+            var finalName = name.Replace(" ", "_");
+
             // Create a URI to the blob
             Uri blobUri = new Uri("https://" +
                                   _storageConfig.AccountName +
                                   ".blob.core.windows.net/" +
                                   _storageConfig.BetContainer +
-                                  "/" + $"{predictionViewModel.Name}_{predictionViewModel.Champion}_{predictionViewModel.TopGoalScorer}_{DateTime.UtcNow}.xlsx");
+                                  "/" + finalName);
 
             // Create StorageSharedKeyCredentials object by reading
             // the values from the configuration (appsettings.json)
