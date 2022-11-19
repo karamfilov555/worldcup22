@@ -49,7 +49,7 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Controllers
                 toast.AddErrorToastMessage("Invalid credentials!");
                 return View("Index");
             }
-            if (!loginViewModel.Password.Equals("PakZagubih20Leva"))
+            if (!loginViewModel.Password.Equals("20Leva"))
             {
                 toast.AddErrorToastMessage("Invalid credentials!");
                 return View("Index");
