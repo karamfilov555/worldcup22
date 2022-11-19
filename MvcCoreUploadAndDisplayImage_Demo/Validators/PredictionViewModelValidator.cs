@@ -1,4 +1,5 @@
 ﻿using MvcCoreUploadAndDisplayImage_Demo.ViewModels;
+using System.Text.RegularExpressions;
 
 namespace MvcCoreUploadAndDisplayImage_Demo.Validators
 {
@@ -34,6 +35,21 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Validators
                 vr.Errors.Add("Excel prediction filed cannot be empty.");
             }
 
+            if (!Regex.IsMatch(predictionViewModel.Name, @"^[a-zA-Z0-9]+$"))
+            {
+                vr.Succeeded = false;
+                vr.Errors.Add("Please use only latin latter and numbers.");
+            }
+            if (!Regex.IsMatch(predictionViewModel.Champion, @"^[a-zA-Z0-9]+$"))
+            {
+                vr.Succeeded = false;
+                vr.Errors.Add("Please use only latin latter and numbers.");
+            }
+            if (!Regex.IsMatch(predictionViewModel.TopGoalScorer, @"^[a-zA-Z0-9]+$"))
+            {
+                vr.Succeeded = false;
+                vr.Errors.Add("Please use only latin latter and numbers.");
+            }
             return vr;
         }
     }

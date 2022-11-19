@@ -120,7 +120,7 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Controllers
                 }
                 else
                 {
-                    toast.AddErrorToastMessage("Please fill all required fields!");
+                    toast.AddErrorToastMessage("Please fill all required fields properly! Use only valid latin latter and numbers.");
                     return View("Upload");
                 }
             }
