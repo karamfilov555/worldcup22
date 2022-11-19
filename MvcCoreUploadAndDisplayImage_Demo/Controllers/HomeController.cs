@@ -60,19 +60,19 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Controllers
             return View("Upload");
         }
 
-        public async Task<IActionResult> UploadPost()
+        public async Task<IActionResult> UploadPrediction()
         {
             return View("Upload");
         }
 
-        public async Task<IActionResult> UploadBanner()
+        public async Task<IActionResult> UploadedPrediction()
         {
             return View("Upload");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UploadPost(PredictionViewModel model)
+        public async Task<IActionResult> UploadPrediction(PredictionViewModel model)
         {
             if (!isLogged)
             {
@@ -115,7 +115,7 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Controllers
                     else
                     {
                         toast.AddErrorToastMessage($"Unsupported file format! Please provide one of the following file formats: \".xlsx\"");
-                        return Redirect("UploadBanner");
+                        return Redirect("UploadedPrediction");
                     }
                 }
                 else
@@ -142,7 +142,7 @@ namespace MvcCoreUploadAndDisplayImage_Demo.Controllers
             {
                 toast.AddErrorToastMessage("Something went wrong!");
             }
-            return Redirect("UploadBanner");
+            return Redirect("UploadedPrediction");
         }
     }
 }

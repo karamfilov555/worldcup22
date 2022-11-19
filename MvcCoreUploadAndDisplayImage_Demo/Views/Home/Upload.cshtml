@@ -1,7 +1,7 @@
 ﻿@model MvcCoreUploadAndDisplayImage_Demo.ViewModels.PredictionViewModel
 
 @{
-    ViewData["Title"] = "UploadPost";
+    ViewData["Title"] = "UploadPrediction";
 }
 <div class="col-md-10 mx-auto py-4">
     <div class="card">
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="card-body">
-        <form enctype="multipart/form-data" asp-action="UploadPost">
+        <form enctype="multipart/form-data" asp-action="UploadPrediction">
             <div class="row">
                 <div class="col-md-6" style="text-decoration: solid">
                     <div class="form-group">
@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="submit" class="btn btn-sm btn-primary rounded-0 text-uppercase" />
-                <a asp-action="UploadPost" class="btn btn-sm btn-primary rounded-0 text-uppercase"><i class="fas fa-fast-backward"></i> Clear all</a>
+                <a asp-action="UploadPrediction" class="btn btn-sm btn-primary rounded-0 text-uppercase"><i class="fas fa-fast-backward"></i> Clear all</a>
             </div>
         </form>
     </div>
