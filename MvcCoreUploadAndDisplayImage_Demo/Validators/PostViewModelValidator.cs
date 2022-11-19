@@ -2,36 +2,36 @@
 
 namespace MvcCoreUploadAndDisplayImage_Demo.Validators
 {
-    public static class PostViewModelValidator
+    public static class PredictionViewModelValidator
     {
-        public static ValidationResult Validate(PostViewModel postViewModel)
+        public static ValidationResult Validate(PredictionViewModel predictionViewModel)
         {
             var vr = new ValidationResult();
 
-            if (postViewModel is null)
+            if (predictionViewModel is null)
             {
                 vr.Succeeded = false;
-                vr.Errors.Add("Post view model cannot be null");
+                vr.Errors.Add("Prediction cannot be null");
             }
-            if (string.IsNullOrWhiteSpace(postViewModel.Title))
+            if (string.IsNullOrWhiteSpace(predictionViewModel.Name))
             {
                 vr.Succeeded = false;
-                vr.Errors.Add("Title cannot be empty.");
+                vr.Errors.Add("Name cannot be empty.");
             }
-            if (string.IsNullOrWhiteSpace(postViewModel.Description))
+            if (string.IsNullOrWhiteSpace(predictionViewModel.Champion))
             {
                 vr.Succeeded = false;
-                vr.Errors.Add("Description cannot be empty.");
+                vr.Errors.Add("Champion cannot be empty.");
             }
-            if (string.IsNullOrWhiteSpace(postViewModel.UrlForRedirect))
+            if (string.IsNullOrWhiteSpace(predictionViewModel.TopGoalScorer))
             {
                 vr.Succeeded = false;
-                vr.Errors.Add("Redirect url cannot be empty.");
+                vr.Errors.Add("Top goal scorer cannot be empty.");
             }
-            if (postViewModel.PostImage is null)
+            if (predictionViewModel.ExcelPrediction is null)
             {
                 vr.Succeeded = false;
-                vr.Errors.Add("Image filed cannot be empty.");
+                vr.Errors.Add("Excel prediction filed cannot be empty.");
             }
 
             return vr;
