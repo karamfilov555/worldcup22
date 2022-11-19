@@ -12,7 +12,7 @@
     <div class="card-body">
         <form enctype="multipart/form-data" asp-action="UploadPrediction">
             <div class="row">
-                <div class="col-md-6" style="text-decoration: solid">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="Name" class="control-label"></label>
                         <input asp-for="Name" class="form-control" />
@@ -53,6 +53,12 @@
             </div>
         </form>
     </div>
+</div>
+
+<div class="list-group-item-success ">
+    <h4>Правилата: </h4>
+    <h4>Познат Знак: 1т; Познат Точен Резултат: 3т; Познат Голмайстор: 10т, Познат Шампион: 10т</h4>
+    <h4>Прогнози се приемат до 18:00 на 20.11.2022; 1-во място - 80%, 2-ро място - 20%</h4>
 </div>
 
 
